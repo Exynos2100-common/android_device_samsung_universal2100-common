@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl:64 \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.1-service
 
 # Camera
 PRODUCT_PACKAGES += \
