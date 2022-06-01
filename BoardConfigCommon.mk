@@ -121,6 +121,14 @@ SOONG_CONFIG_exynos2100CameraVars += \
 
 SOONG_CONFIG_exynos2100CameraVars_exynos2100_model := $(TARGET_DEVICE)
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= false
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 ## Manifest
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
