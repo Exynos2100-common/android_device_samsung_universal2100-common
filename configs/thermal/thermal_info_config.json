@@ -5,7 +5,7 @@
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
-                65.0,
+                75.0,
                 85.0,
                 95.0,
                 100.0,
@@ -20,7 +20,7 @@
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
-                65.0,
+                75.0,
                 85.0,
                 95.0,
                 100.0,
@@ -35,7 +35,7 @@
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
-                76.0,
+                70.0,
                 81.0,
                 86.0,
                 91.0,
@@ -50,7 +50,7 @@
             "Type":"GPU",
             "HotThreshold":[
                 "NAN",
-                65.0,
+                75.0,
                 88.0,
                 95.0,
                 100.0,
@@ -139,7 +139,7 @@
         {
             "Name":"thermal-dev-0",
             "Type":"COMPONENT"
-        },       
+        },
         {
             "Name":"thermal-cpufreq-0",
             "Type":"CPU"
