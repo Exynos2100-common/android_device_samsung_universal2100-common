@@ -20,7 +20,6 @@ COMMON_PATH := device/samsung/universal2100-common
 $(call inherit-product, vendor/samsung/universal2100-common/universal2100-common-vendor.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 30
-BOARD_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -70,10 +69,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4_1support.vendor:64
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -151,15 +146,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     device/samsung/universal2100-common/overlay/hardware/samsung/AdvancedDisplay
 
-# Preopt SystemUI and Settings
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    Settings
-
-# Compile SystemUI on device with `speed`.
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.systemuicompilerfilter=speed
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -221,10 +207,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# PowerShare
-PRODUCT_PACKAGES += \
-    vendor.lineage.powershare@1.0-service.samsung
-
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -247,7 +229,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0.vendor:64 \
-    android.hardware.sensors-service.samsung-multihal.exynos2100
+    android.hardware.sensors-service.samsung-multihal
 
 # Shims
 PRODUCT_PACKAGES += \
