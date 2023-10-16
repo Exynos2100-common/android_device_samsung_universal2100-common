@@ -107,12 +107,6 @@ KERNEL_LD := LD=ld.lld
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
-## Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/batt_slate_mode
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-
 ### CAMERA
 SOONG_CONFIG_NAMESPACES += exynos2100CameraVars
 SOONG_CONFIG_exynos2100CameraVars += \
@@ -124,7 +118,7 @@ SOONG_CONFIG_exynos2100CameraVars_exynos2100_model := $(TARGET_DEVICE)
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/device_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/aosp/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Partitions
@@ -138,11 +132,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_USES_METADATA_PARTITION := true
 
 BOARD_ROOT_EXTRA_FOLDERS := efs
-
-BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 1887436800
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1887436800
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1887436800
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
 
 # Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
@@ -166,7 +155,7 @@ VENDOR_SECURITY_PATCH := 2023-07-01
 # SELinux
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/lineage/sepolicy/exynos/sepolicy.mk
+include device/custom/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
