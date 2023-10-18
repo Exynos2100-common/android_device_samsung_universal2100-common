@@ -82,13 +82,22 @@ PRODUCT_PACKAGES += \
     libhypervintf \
     libsensorndkbridge
 
+PRODUCT_PACKAGES += \
+    libhwjpeg
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service
+    android.hardware.graphics.allocator@4.0-service \
+    android.hardware.graphics.mapper@4.0-impl
+
+PRODUCT_PACKAGES += \
+    android.hardware.composer.hwc3-service.slsi \
+    gralloc.exynos2100 \
+    libion
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -123,13 +132,24 @@ PRODUCT_PACKAGES += \
    libhwbinder \
    libhwbinder.vendor
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.samsung
-
 # OMX
 PRODUCT_PACKAGES += \
-    libepicoperator
+    libstagefrighthw \
+    libExynosOMX_Core \
+    libExynosOMX_Resourcemanager \
+    libOMX.Exynos.AVC.Decoder \
+    libOMX.Exynos.AVC.Encoder \
+    libOMX.Exynos.AVC.WFD.Encoder \
+    libOMX.Exynos.HEVC.Decoder \
+    libOMX.Exynos.HEVC.Encoder \
+    libOMX.Exynos.HEVC.WFD.Encoder \
+    libOMX.Exynos.MPEG4.Decoder \
+    libOMX.Exynos.MPEG4.Encoder \
+    libOMX.Exynos.VP8.Decoder \
+    libOMX.Exynos.VP8.Encoder \
+    libOMX.Exynos.VP9.Decoder \
+    libOMX.Exynos.VP9.Encoder \
+    libOMX.Exynos.WMV.Decoder
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -255,7 +275,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung/aidl/power-libperfmgr
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung_slsi-linaro/exynos/gralloc4
 
 # Memtrack
 PRODUCT_PACKAGES += \
