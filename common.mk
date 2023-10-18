@@ -81,13 +81,32 @@ PRODUCT_PACKAGES += \
     libhypervintf \
     libsensorndkbridge
 
+PRODUCT_PACKAGES += \
+    libhwjpeg
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service
+    libexynosgraphicbuffer_public \
+    android.hardware.graphics.mapper@4.0-impl \
+    android.hardware.graphics.allocator@4.0-service \
+    android.hardware.graphics.allocator@4.0-impl
+
+# HWComposer
+PRODUCT_PACKAGES += \
+    hwcomposer.exynos2100 \
+    android.hardware.graphics.composer@2.4-impl \
+    android.hardware.graphics.composer@2.4-service \
+    vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service
+
+PRODUCT_PACKAGES += \
+    vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service
+
+PRODUCT_PACKAGES += \
+	android.hardware.renderscript@1.0-impl
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -139,13 +158,24 @@ PRODUCT_PACKAGES += \
    libhwbinder \
    libhwbinder.vendor
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.samsung
-
 # OMX
 PRODUCT_PACKAGES += \
-    libepicoperator
+    libstagefrighthw \
+    libExynosOMX_Core \
+    libExynosOMX_Resourcemanager \
+    libOMX.Exynos.AVC.Decoder \
+    libOMX.Exynos.AVC.Encoder \
+    libOMX.Exynos.AVC.WFD.Encoder \
+    libOMX.Exynos.HEVC.Decoder \
+    libOMX.Exynos.HEVC.Encoder \
+    libOMX.Exynos.HEVC.WFD.Encoder \
+    libOMX.Exynos.MPEG4.Decoder \
+    libOMX.Exynos.MPEG4.Encoder \
+    libOMX.Exynos.VP8.Decoder \
+    libOMX.Exynos.VP8.Encoder \
+    libOMX.Exynos.VP9.Decoder \
+    libOMX.Exynos.VP9.Encoder \
+    libOMX.Exynos.WMV.Decoder
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -240,10 +270,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor:64 \
@@ -270,11 +296,17 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung_slsi/interfaces
+    hardware/samsung_slsi/interfaces \
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung_slsi-linaro/exynos/gralloc4
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack-service.samsung-mali
+    memtrack.exynos2100 \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    libion_exynos \
+    libion
 
 # Neural networks
 PRODUCT_PACKAGES += \
@@ -305,10 +337,6 @@ PRODUCT_COPY_FILES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung
-
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
 
 # Vibrator
 PRODUCT_PACKAGES += \
