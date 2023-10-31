@@ -261,6 +261,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.samsung_slsi.hardware.epic</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IEpicRequest</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.samsung_slsi.hardware.eden_runtime</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

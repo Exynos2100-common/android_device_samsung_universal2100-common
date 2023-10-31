@@ -94,6 +94,23 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor:32 \
     android.hardware.drm-service.clearkey
 
+# Epic daemon
+PRODUCT_SOONG_NAMESPACES += device/samsung/universal2100-common/power
+PRODUCT_PACKAGES += epic libems_service libexynos_migov libgmc libepic_helper
+
+PRODUCT_COPY_FILES += \
+        device/samsung/universal2100-common/power/epic.json:$(TARGET_COPY_OUT_VENDOR)/etc/epic.json \
+        device/samsung/universal2100-common/power/ems.json:$(TARGET_COPY_OUT_VENDOR)/etc/ems.json \
+
+# Epic HIDL
+SOONG_CONFIG_NAMESPACES += epic
+SOONG_CONFIG_epic := vendor_hint
+SOONG_CONFIG_epic_vendor_hint := true
+
+PRODUCT_PACKAGES += \
+        vendor.samsung_slsi.hardware.epic@1.0-impl \
+        vendor.samsung_slsi.hardware.epic@1.0-service
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -207,7 +224,7 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64 \
-    android.hardware.power-service.samsung-libperfmgr
+    android.hardware.power-service.exynos
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -253,7 +270,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
-    hardware/samsung/aidl/power-libperfmgr
+    hardware/samsung_slsi/interfaces
 
 # Memtrack
 PRODUCT_PACKAGES += \
