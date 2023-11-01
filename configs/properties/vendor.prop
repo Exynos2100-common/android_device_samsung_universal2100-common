@@ -32,9 +32,6 @@ ro.vendor.eden.npu.version.path=/sys/devices/platform/npu_exynos/version
 # FRP
 ro.frp.pst=/dev/block/persistent
 
-# Fastbootd
-ro.fastbootd.available=true
-
 # Graphics
 debug.sf.disable_client_composition_cache=1
 debug.sf.use_phase_offsets_as_durations=1
@@ -88,8 +85,3 @@ ro.vendor.cscsupported=1
 # Samsung hermesd props
 security.securehw.available=false
 security.securenvm.available=false
-
-# Need adb on bringup
-ro.secure=0
-ro.adb.secure=0
-persist.sys.usb.config=adb
