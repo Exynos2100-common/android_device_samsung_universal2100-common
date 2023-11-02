@@ -1,0 +1,217 @@
+{
+  "Nodes": [
+    {
+      "Name": "CPULittleClusterMaxFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq",
+      "Values": [
+        "2002000",
+        "400000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPULittleClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq",
+      "Values": [
+        "2002000",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUMidClusterMaxFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq",
+      "Values": [
+        "2600000",
+        "2080000",
+        "533000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUMidClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq",
+      "Values": [
+        "2080000",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterMaxFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq",
+      "Values": [
+        "2704000",
+        "2080000",
+        "533000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq",
+      "Values": [
+        "2080000",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMaxFreq",
+      "Path": "/sys/devices/platform/18500000.mali/dvfs_max_lock",
+      "Values": [
+        "676000",
+        "403000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMinFreq",
+      "Path": "/sys/devices/platform/18500000.mali/dvfs_min_lock",
+      "Values": [
+        "403000",
+        "-1"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "KERNEL_APP_START_NOTIFY",
+      "Path": "/sys/kernel/mm/vmscan/am_app_launch",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "EMSTUNE_REQMODE",
+      "Path": "/sys/kernel/ems/emstune/req_mode",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "DefaultIndex": 0
+    },
+    {
+      "Name": "DoubleTapToWakeEnable",
+      "Path": "/sys/class/sec/tsp/cmd",
+      "Values": [
+        "aot_enable,1",
+        "aot_enable,0"
+      ],
+      "ResetOnInit": false
+    },
+    {
+      "Name": "TouchscreenEnable",
+      "Path": "/sys/class/sec/tsp/input/enabled",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    }
+  ],
+  "Actions": [
+    {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "403000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "2002000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 2000,
+      "Value": "2002000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUMidClusterMinFreq",
+      "Duration": 2000,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 2000,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "KERNEL_APP_START_NOTIFY",
+      "Duration": 2000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 0,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "2080000"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "403000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "400000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 0,
+      "Value": "533000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "533000"
+    },
+    {
+      "PowerHint": "INTERACTIVE",
+      "Node": "TouchscreenEnable",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "DOUBLE_TAP_TO_WAKE",
+      "Node": "DoubleTapToWakeEnable",
+      "Duration": 0,
+      "Value": "aot_enable,1"
+    }
+  ]
+}
