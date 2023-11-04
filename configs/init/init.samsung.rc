@@ -1124,3 +1124,31 @@ on boot
 # BATTERY
 on property:sys.boot_completed=1
     write /sys/class/power_supply/battery/boot_completed "1"
+
+    # Runtime fs tuning
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sda/queue/iostats 1
+
+    # Adjust watermark level
+    write /proc/sys/vm/watermark_scale_factor 200
+
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
+    # Setup final cpuset
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,4-5
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    setprop vendor.powerhal.init 1
+
+    # Setup final cpu.uclamp
+    write /dev/cpuctl/background/cpu.uclamp.max 50
+    write /dev/cpuctl/system-background/cpu.uclamp.max 50
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
+
+    # Reduce pm_freeze_timeout value
+    write /sys/power/pm_freeze_timeout 1000
