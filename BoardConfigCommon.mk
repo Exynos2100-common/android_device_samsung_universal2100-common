@@ -64,6 +64,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Kernel
+TARGET_KERNEL_CLANG_VERSION := r416183b
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive loop.max_part=7
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_CUSTOM_BOOTIMG := true
@@ -153,7 +154,7 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifests/manifest.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/configs/manifests/device_framework_matrix.xml \
-    vendor/aosp/config/device_framework_matrix.xml
+    vendor/evolution/config/device_framework_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -194,7 +195,7 @@ VENDOR_SECURITY_PATCH := 2023-10-01
 # SELinux
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/custom/sepolicy/exynos/sepolicy.mk
+include device/evolution/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
