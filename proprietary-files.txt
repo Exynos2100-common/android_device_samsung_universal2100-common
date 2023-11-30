@@ -1,4 +1,4 @@
-# Proprietary files - from Samsung package version EWH1, unless pinned
+# Proprietary files - from Samsung package version FWK2, unless pinned
 
 # Audio
 vendor/etc/audio_effects_common.conf
