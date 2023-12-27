@@ -154,7 +154,7 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/manifests/manifest.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/configs/manifests/device_framework_matrix.xml \
-    vendor/evolution/config/device_framework_matrix.xml
+    vendor/cherish/config/device_framework_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -195,7 +195,7 @@ VENDOR_SECURITY_PATCH := 2023-10-01
 # SELinux
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/evolution/sepolicy/exynos/sepolicy.mk
+include device/cherish/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
