@@ -59,6 +59,7 @@ TARGET_BOOTLOADER_BOARD_NAME := exynos2100
 TARGET_BOARD_PLATFORM := universal2100
 TARGET_SOC := exynos2100
 TARGET_NO_BOOTLOADER := true
+include hardware/samsung_slsi-linaro/config/BoardConfig2100.mk
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
