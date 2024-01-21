@@ -38,7 +38,7 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
@@ -100,6 +100,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_SEC_FP_REQUEST_FORCE_CALIBRATE := true
 
 # Kernel
+TARGET_KERNEL_CLANG_VERSION := r416183b
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/samsung/universal2100
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
@@ -125,7 +126,7 @@ SOONG_CONFIG_exynos2100CameraVars_exynos2100_model := $(TARGET_DEVICE)
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/device_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/evolution/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Partitions
@@ -170,7 +171,7 @@ VENDOR_SECURITY_PATCH := 2023-10-01
 # SELinux
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/lineage/sepolicy/exynos/sepolicy.mk
+include device/evolution/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
