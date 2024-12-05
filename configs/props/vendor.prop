@@ -78,7 +78,6 @@ ro.vendor.nfc.info.antpos=1
 ro.vendor.nfc.support.ese=true
 
 # RIL
-vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
 ## Power HAL
 vendor.powerhal.disp.idle_support=false
