@@ -78,6 +78,7 @@ ro.vendor.nfc.info.antpos=1
 ro.vendor.nfc.support.ese=true
 
 # RIL
+ro.telephony.default_network=9,9
 
 ## Power HAL
 vendor.powerhal.disp.idle_support=false
